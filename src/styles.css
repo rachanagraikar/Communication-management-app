@@ -1,0 +1,787 @@
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #6200ea; 
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+  background-color: #4500a1;
+}
+
+.navbar .link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0 15px;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .link:hover {
+  color: #ff4081;
+  transform: translateY(-3px);
+}
+
+.navbar .link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ff4081;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.navbar .link:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.navbar-header {
+
+  color: #dc8bc3;  
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fff;
+}
+
+.notification-count {
+  background-color: #ff4081; 
+  color: white;
+  font-size: 12px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+
+/* Dashboard Styles */
+.dashboard {
+  padding: 40px 60px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.dashboard h2 {
+  font-size: 36px;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.meetingSection h3 {
+  font-size: 28px;
+  color: #34495e;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.meetings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.meetingCard {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1), -6px -6px 15px rgba(255, 255, 255, 0.7);
+  padding: 25px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.meetingCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), -8px -8px 20px rgba(255, 255, 255, 0.9);
+}
+
+.meetingCard h4 {
+  font-size: 22px;
+  color: #1abc9c;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.meetingCard p {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+.meetingCard button {
+  background: linear-gradient(135deg, #1abc9c, #16a085);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  align-self: flex-start;
+}
+
+.meetingCard button:hover {
+  background: linear-gradient(135deg, #16a085, #1abc9c);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.meetings p {
+  font-size: 18px;
+  color: #bdc3c7;
+  text-align: center;
+  grid-column: span 2;
+}
+
+.todayMeetings {
+  background-color: #ffeb3b;
+  border-left: 5px solid #fbc02d;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.upcomingMeetings {
+  background-color: #0e943b;
+  border-left: 5px solid #34a62a;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.overdueMeetings {
+  background-color: #f44336;
+  border-left: 5px solid #d32f2f;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.meetingCard {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .form-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .analytics {
+    flex-direction: column;
+  }
+
+  .dashboard h2 {
+    font-size: 28px;
+  }
+
+  .meetingCard h4 {
+    font-size: 18px;
+  }
+
+  .meetingCard p {
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 12px;
+    font-size: 14px;
+  }
+  sign-in-form {
+    width: 90%;
+  }
+}
+
+/* Companies Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form input, .form select, .form textarea {
+  padding: 0.75rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+/* Calendar Styles */
+.agenda-form {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.agenda-form h3 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.agenda-form label {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.agenda-form input, .agenda-form select {
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.agenda-form button {
+  background-color: #ff4081;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.agenda-form button:hover {
+  background-color: #e91e63;
+}
+
+/* Analytics Styles */
+.analytics {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.analytics-card {
+  background: #7d669c;
+  color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-card h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.analytics-card p {
+  font-size: 16px;
+}
+
+/* Notification Dropdown */
+.notification-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  z-index: 100;
+}
+
+.notification-dropdown ul {
+  padding: 0;
+  margin: 0;
+}
+
+.notification-dropdown li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.notification-dropdown li:hover {
+  background-color: #f4f4f4;
+}
+
+.notification-dropdown .dropdown-header {
+  padding: 10px;
+  font-weight: bold;
+  background-color: #6200ea;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.notification-dropdown .dropdown-footer {
+  padding: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Page Background */
+.sign-in-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle, #4c8bf5 20%, #2a52be 80%);
+  color: #fff;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Animated Background Elements */
+.sign-in-page::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 6s infinite ease-in-out;
+}
+
+.sign-in-page::after {
+  content: '';
+  position: absolute;
+  bottom: -70px;
+  left: -70px;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out reverse;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+
+/* Branding Header */
+.branding {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Container */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Sign-In Form */
+.sign-in-form {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  color: #333;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.sign-in-form:hover {
+  transform: translateY(0);
+}
+
+/* Form Title */
+.sign-in-form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4c8bf5;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* Input Fields */
+.sign-in-form input[type="text"],
+.sign-in-form input[type="password"] {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.sign-in-form input[type="text"]:focus,
+.sign-in-form input[type="password"]:focus {
+  border-color: #4c8bf5;
+  box-shadow: 0 0 10px rgba(76, 139, 245, 0.5);
+  outline: none;
+  background-color: #f9f9ff;
+}
+
+/* Checkbox Styles */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox-container label {
+  font-size: 14px;
+  color: #555;
+  margin-left: 8px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4c8bf5;
+}
+
+/* Buttons */
+.sign-in-form button {
+  width: 100%;
+  padding: 12px 16px;
+  background: linear-gradient(90deg, #4c8bf5, #2a52be);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sign-in-form button:hover {
+  background: linear-gradient(90deg, #2a52be, #4c8bf5);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(76, 139, 245, 0.5);
+}
+
+/* Links */
+.sign-in-form a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #4c8bf5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sign-in-form a:hover {
+  color: #2a52be;
+  text-decoration: underline;
+}
+
+
+/* Notification Text */
+.notification-text {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+}
+
+/* Responsive Design */
+
+/* User Dropdown Container */
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+/* Dropdown Menu Items */
+.user-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-dropdown ul li {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-dropdown ul li:hover {
+  background-color: #f0f0f0;
+  color: #4c8bf5;
+}
+
+/* Logout Button Styles */
+.user-dropdown ul li:last-child {
+  border-top: 1px solid #ddd;
+  margin-top: 5px;
+  padding-top: 10px;
+}
+
+.user-dropdown ul li:last-child:hover {
+  background-color: #fbe4e6; /* Soft red background */
+  color: #d32f2f; /* Red color for logout */
+}
+
+.user-dropdown ul li:last-child svg {
+  fill: #d32f2f;
+}
+
+/* User Icon */
+.user-icon {
+  font-size: 24px;
+  color: #4c8bf5;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.user-icon:hover {
+  color: #357ae8;
+}
+.user-dropdown {
+  position: absolute;
+  top: 40px; /* Adjust according to your design */
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.user-menu:hover .user-dropdown {
+  display: block;
+}
+.profile-page {
+  background-color: #f7f8fc;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-header h1 {
+  font-size: 2rem;
+  color: #4f4f4f;
+}
+
+.profile-header p {
+  font-size: 1.2rem;
+  color: #808080;
+}
+
+.profile-info {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h2 {
+  color: #4f4f4f;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.profile-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-info li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.profile-actions {
+  margin-top: 20px;
+}
+
+.profile-actions h3 {
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.action-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #0056b3;
+}
+
+.profile-detail {
+  margin-bottom: 20px;
+}
+
+.profile-detail li {
+  font-size: 1.2rem;
+}
+
+.profile-detail strong {
+  color: #333;
+}
+/* LogoutPage Styles */
+.logout-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.logout-page h1 {
+  font-size: 2rem;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.logout-page p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.logout-page button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-page button:hover {
+  background-color: #0056b3;
+}
