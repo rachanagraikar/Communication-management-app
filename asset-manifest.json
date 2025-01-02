@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Communication-management-app/static/css/main.deb0b105.css",
-    "main.js": "/Communication-management-app/static/js/main.9394417d.js",
+    "main.js": "/Communication-management-app/static/js/main.835aaf22.js",
     "index.html": "/Communication-management-app/index.html",
     "main.deb0b105.css.map": "/Communication-management-app/static/css/main.deb0b105.css.map",
-    "main.9394417d.js.map": "/Communication-management-app/static/js/main.9394417d.js.map"
+    "main.835aaf22.js.map": "/Communication-management-app/static/js/main.835aaf22.js.map"
   },
   "entrypoints": [
     "static/css/main.deb0b105.css",
-    "static/js/main.9394417d.js"
+    "static/js/main.835aaf22.js"
   ]
 }
