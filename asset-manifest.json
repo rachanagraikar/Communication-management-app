@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Communication-management-app/static/css/main.deb0b105.css",
+    "main.js": "/Communication-management-app/static/js/main.f90d9e3e.js",
+    "index.html": "/Communication-management-app/index.html",
+    "main.deb0b105.css.map": "/Communication-management-app/static/css/main.deb0b105.css.map",
+    "main.f90d9e3e.js.map": "/Communication-management-app/static/js/main.f90d9e3e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.deb0b105.css",
+    "static/js/main.f90d9e3e.js"
+  ]
+}
